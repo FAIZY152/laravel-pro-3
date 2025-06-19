@@ -15,6 +15,12 @@ class countryCheck
      */
     public function handle(Request $request, Closure $next): Response
     {
+        // Middleware check in web = http://127.0.0.1:8000/about?age=18&country=palestine
+
+            if ($request->country != "palestine") {
+            die("You are jews and i will kill you bloody");
+        }
+
         return $next($request);
     }
 }
