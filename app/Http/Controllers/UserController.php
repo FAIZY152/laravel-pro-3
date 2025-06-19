@@ -20,12 +20,23 @@ class UserController extends Controller
     //     return $students;
     // }
 
-    function getUser(){
-        $response = Http::get('https://jsonplaceholder.typicode.com/users');
-        $response = $response->json();
-        // pass to the view 
-        return view('user' , ['users' => $response]);
-        // return $response->status();
-    }
+    // api 
+
+    // function getUser(){
+    //     $response = Http::get('https://jsonplaceholder.typicode.com/users');
+    //     $response = $response->json();
+    //     // pass to the view 
+    //     return view('user' , ['users' => $response]);
+    //     // return $response->status();
+    // }
+
+    // Query builder = easy way to create and mange dbs
+    
+// ...existing code...
+function getUsers ()  {
+    $response = DB::table('students')->get(); // fetch the data
+    return response()->json($response); // return as JSON
+}
+// ...existing code...
 
 }

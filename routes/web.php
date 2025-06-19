@@ -30,5 +30,5 @@ Route::get('/', function () {
  
 // Connecting Db
 
-Route::get('users', [UserController::class,'getUser']);
+Route::get('users', [UserController::class,'getUsers']);
 
