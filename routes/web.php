@@ -36,5 +36,7 @@ Route::get('adduser', [UserController::class,'addUser']);
 
 // Equilent and Query builder 
 
-Route::get('user' , [EqQueryBuilder::class , 'Queries']);
+Route::get('users' , [EqQueryBuilder::class , 'Queries']);
+Route::get('add' , [EqQueryBuilder::class , 'AddnewUser']);
+Route::get('upd' , [EqQueryBuilder::class , 'updateandDelete']);
 
