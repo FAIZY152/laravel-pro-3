@@ -33,9 +33,18 @@ class UserController extends Controller
     // Query builder = easy way to create and mange dbs
     
 // ...existing code...
-function getUsers ()  {
-    $response = DB::table('students')->get(); // fetch the data
-    return response()->json($response); // return as JSON
+// function getUsers ()  {
+//     $response = DB::table('students')->get(); // fetch the data
+//     return response()->json($response); // return as JSON
+// }
+
+function addUser(){
+    $user = DB::table('students')->insert([
+        "name"=>"lala",
+        "email"=>"lala@gmail.com",
+        "age"=>20
+    ]);
+    return $user;
 }
 // ...existing code...
 

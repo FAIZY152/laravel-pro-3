@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EqQueryBuilder;
 use App\Http\Controllers\UserController;
 
 use  App\Http\Middleware\AgeCheck;
@@ -30,5 +31,10 @@ Route::get('/', function () {
  
 // Connecting Db
 
-Route::get('users', [UserController::class,'getUsers']);
+Route::get('adduser', [UserController::class,'addUser']);
+
+
+// Equilent and Query builder 
+
+Route::get('user' , [EqQueryBuilder::class , 'Queries']);
 
